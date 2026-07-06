@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import WaitingRoom from './pages/WaitingRoom';
+import VideoRoom from './pages/VideoRoom';
 import { Loader } from 'lucide-react';
 
 // Protected Route Component wrapper
@@ -29,14 +30,6 @@ const ProtectedRoute = ({ children }) => {
 
   return children;
 };
-
-// Placeholders for Phase 7 to prevent compilation breaks
-const VideoRoomPlaceholder = () => (
-  <div className="max-w-md mx-auto mt-20 p-8 bg-white border border-slate-100 rounded-3xl shadow-sm text-center space-y-4">
-    <h2 className="text-2xl font-bold text-slate-850">WebRTC Video Call Placeholder</h2>
-    <p className="text-slate-500 text-sm">Real-time WebRTC streams will be implemented in Phase 7.</p>
-  </div>
-);
 
 function App() {
   return (
@@ -71,7 +64,7 @@ function App() {
                 path="/video-room/:appointmentId"
                 element={
                   <ProtectedRoute>
-                    <VideoRoomPlaceholder />
+                    <VideoRoom />
                   </ProtectedRoute>
                 }
               />
