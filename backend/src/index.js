@@ -5,9 +5,13 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
+const initSocket = require('./socket');
 
 const app = express();
 const server = http.createServer(app);
+
+// Initialize WebRTC signaling server
+initSocket(server);
 
 // Middlewares
 app.use(cors());
