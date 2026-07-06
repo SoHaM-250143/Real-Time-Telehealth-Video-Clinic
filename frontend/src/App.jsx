@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import WaitingRoom from './pages/WaitingRoom';
 import { Loader } from 'lucide-react';
 
 // Protected Route Component wrapper
@@ -29,14 +30,7 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Placeholders for Phase 6 & 7 to prevent compilation breaks
-const WaitingRoomPlaceholder = () => (
-  <div className="max-w-md mx-auto mt-20 p-8 bg-white border border-slate-100 rounded-3xl shadow-sm text-center space-y-4">
-    <h2 className="text-2xl font-bold text-slate-850">Waiting Room Placeholder</h2>
-    <p className="text-slate-500 text-sm">Waiting room controls will be implemented in Phase 6.</p>
-  </div>
-);
-
+// Placeholders for Phase 7 to prevent compilation breaks
 const VideoRoomPlaceholder = () => (
   <div className="max-w-md mx-auto mt-20 p-8 bg-white border border-slate-100 rounded-3xl shadow-sm text-center space-y-4">
     <h2 className="text-2xl font-bold text-slate-850">WebRTC Video Call Placeholder</h2>
@@ -69,7 +63,7 @@ function App() {
                 path="/waiting-room/:appointmentId"
                 element={
                   <ProtectedRoute>
-                    <WaitingRoomPlaceholder />
+                    <WaitingRoom />
                   </ProtectedRoute>
                 }
               />
