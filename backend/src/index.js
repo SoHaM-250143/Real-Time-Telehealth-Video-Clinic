@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
+const appointmentRoutes = require('./routes/appointmentRoutes');
 
 const app = express();
 const server = http.createServer(app);
@@ -14,6 +15,7 @@ app.use(express.json());
 
 // API Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/appointments', appointmentRoutes);
 
 // Root / Health check route
 app.get('/health', (req, res) => {
